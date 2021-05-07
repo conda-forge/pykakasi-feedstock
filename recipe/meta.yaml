@@ -1,4 +1,4 @@
-{% set version = "2.0.8" %}
+{% set version = "2.1.0" %}
 
 package:
   name: pykakasi
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/miurahr/pykakasi/archive/v{{ version }}.tar.gz
-  sha256: 6160b59fedfc64ea70d8e7447a06edc79544b106ddbf9021462928e79602e3c7
+  sha256: 2ab64adb903adb912307fd838ed55c67a0f6977f2116679375bbf5dac5c45c59
 
 build:
   number: 0
@@ -23,19 +23,22 @@ requirements:
   host:
     - python
     - pip
-    - klepto
+    - deprecated
     - importlib-metadata  # [py<38]
   run:
     - python
-    - klepto
+    - deprecated
     # unfortunately, this really run-depends on setuptools, see
-    # https://github.com/miurahr/pykakasi/blob/v2.0.4/src/pykakasi/properties.py#L9
+    # https://github.com/miurahr/pykakasi/blob/v2.1.0/src/pykakasi/properties.py#L8
     - setuptools
 
 test:
   # will run run_test.py
   requires:
     - pytest
+    - pytest-benchmark
+    - pytest-profiling
+    - py-cpuinfo
   imports:
     - pykakasi
   source_files:
