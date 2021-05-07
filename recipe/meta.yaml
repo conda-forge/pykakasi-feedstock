@@ -23,13 +23,13 @@ requirements:
   host:
     - python
     - pip
-    - klepto
+    - deprecated
     - importlib-metadata  # [py<38]
   run:
     - python
-    - klepto
+    - deprecated
     # unfortunately, this really run-depends on setuptools, see
-    # https://github.com/miurahr/pykakasi/blob/v2.0.4/src/pykakasi/properties.py#L9
+    # https://github.com/miurahr/pykakasi/blob/v2.1.0/src/pykakasi/properties.py#L8
     - setuptools
 
 test:
