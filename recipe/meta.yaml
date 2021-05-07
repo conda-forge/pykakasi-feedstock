@@ -36,6 +36,9 @@ test:
   # will run run_test.py
   requires:
     - pytest
+    - pytest-benchmark
+    - pytest-profiling
+    - py-cpuinfo
   imports:
     - pykakasi
   source_files:
