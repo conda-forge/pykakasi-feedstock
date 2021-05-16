@@ -1,4 +1,4 @@
-{% set version = "2.1.0" %}
+{% set version = "2.1.1" %}
 
 package:
   name: pykakasi
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/miurahr/pykakasi/archive/v{{ version }}.tar.gz
-  sha256: 2ab64adb903adb912307fd838ed55c67a0f6977f2116679375bbf5dac5c45c59
+  sha256: de70527343d7adf32e007aa21212719e1bb88eb0759957d3a14b6e26ce01585f
 
 build:
   number: 0
