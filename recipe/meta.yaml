@@ -18,16 +18,17 @@ requirements:
     - pip
     - setuptools
     - setuptools-scm
-    - klepto
     - wheel
   host:
     - python
     - pip
     - deprecated
+    - jaconv
     - importlib-metadata  # [py<38]
   run:
     - python
     - deprecated
+    - jaconv
     # unfortunately, this really run-depends on setuptools, see
     # https://github.com/miurahr/pykakasi/blob/v2.1.0/src/pykakasi/properties.py#L8
     - setuptools
