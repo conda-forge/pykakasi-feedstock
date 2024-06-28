@@ -9,22 +9,24 @@ source:
   sha256: 65c813cc4e61c65933dd41c70329289360434d30982e41f6ad418dd8033240dd
 
 build:
-  number: 4
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 5
+  script:
+    - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}   # [unix]
+    - set "SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}"    # [win]
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
+    - python                                # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}    # [build_platform != target_platform]
+  host:
     - python
     - pip
     - setuptools
     - setuptools-scm
     - wheel
-  host:
-    - python
-    - pip
     - deprecated
     - jaconv
-    - importlib-metadata  # [py<38]
   run:
     - python
     - deprecated
