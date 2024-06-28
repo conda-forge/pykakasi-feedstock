@@ -14,17 +14,16 @@ build:
 
 requirements:
   build:
+    - python                                # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}    # [build_platform != target_platform]
+  host:
     - python
     - pip
     - setuptools
     - setuptools-scm
     - wheel
-  host:
-    - python
-    - pip
     - deprecated
     - jaconv
-    - importlib-metadata  # [py<38]
   run:
     - python
     - deprecated
