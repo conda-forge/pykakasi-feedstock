@@ -10,7 +10,10 @@ source:
 
 build:
   number: 5
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}   # [unix]
+    - set "SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}"    # [win]
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
