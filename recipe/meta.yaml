@@ -1,15 +1,15 @@
-{% set version = "2.2.1" %}
+{% set version = "2.3.0" %}
 
 package:
   name: pykakasi
   version: {{ version }}
 
 source:
-  url: https://github.com/miurahr/pykakasi/archive/v{{ version }}.tar.gz
-  sha256: 65c813cc4e61c65933dd41c70329289360434d30982e41f6ad418dd8033240dd
+  url: https://codeberg.org/miurahr/pykakasi/archive/v{{ version }}.tar.gz
+  sha256: 35ba99a5cac665ef07eb9144f2e91b97f22daa33db4d0790c0698ee73b65a360
 
 build:
-  number: 5
+  number: 0
   script:
     - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}   # [unix]
     - set "SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}"    # [win]
@@ -31,16 +31,13 @@ requirements:
     - python
     - deprecated
     - jaconv
-    # unfortunately, this really run-depends on setuptools, see
-    # https://github.com/miurahr/pykakasi/blob/v2.1.0/src/pykakasi/properties.py#L8
-    - setuptools
+    - importlib_resources  # [py<39]
 
 test:
   # will run run_test.py
   requires:
     - pytest
     - pytest-benchmark
-    - pytest-profiling
     - py-cpuinfo
   imports:
     - pykakasi
