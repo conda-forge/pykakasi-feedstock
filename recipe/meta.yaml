@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://codeberg.org/miurahr/pykakasi/archive/v{{ version }}.tar.gz
-  sha256: 35ba99a5cac665ef07eb9144f2e91b97f22daa33db4d0790c0698ee73b65a360
+  sha256: f24e37f7746baf4765d2c0f03258717b25d26a8555b9a79942de8144471fd947
 
 build:
   number: 3
